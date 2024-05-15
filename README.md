@@ -31,6 +31,14 @@
 <table>
   <tr>
     <td><img src="demo-pics/home-main.png" alt="Homepage" width="500"></td>
-    <td><img src="demo-pics/home-cards.png" alt="Relevant News" width="500">
+    <td><img src="demo-pics/home-cards.png" alt="Info Cards" width="500">
+  </tr>
+</table>
+
+## Personal Info Page
+<table>
+  <tr>
+    <td><img src="demo-pics/gunnar-main.png" alt="Main info" width="500"></td>
+    <td><img src="demo-pics/gunnar-carousel.png" alt="Image carousel" width="500">
   </tr>
 </table>
