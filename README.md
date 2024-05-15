@@ -8,7 +8,9 @@
 - Fully responsive design that is compatible with mobile.
 
 ## Sign up, Log in, and Log out
-<div style="display: flex;">
-  <img src="demo-pics/login-modal.png" alt="Login modal" width="50%">
-  <img src="demo-pics/signup-modal.png" alt="Login modal" width="50%">
-</div>
+<table>
+  <tr>
+    <td><img src="demo-pics/signup-modal.png" alt="Signup modal" width="500"></td>
+    <td><img src="demo-pics/login-modal.png" alt="Login modal" width="500"></td>
+  </tr>
+</table>
