@@ -122,10 +122,30 @@
             <label for="loginPassword">Password:</label>
             <input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="Password">
             
+            <div class="modal-footer">
+              <button type="button" id="loginButton" onclick="login()" class="btn btn-primary">Login</button>
+              <button type="button" id="closeLoginButton" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal" id="signUpModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <label for="signUpName">Name:</label>
+          <input type="text" class="form-control" id="signUpName" name="signUpName" placeholder="Name">
+          <label for="signUpUsername">Username:</label>
+          <input type="text" class="form-control" id="signUpUsername" name="signUpUsername" placeholder="Username">
+          <label for="signUpPassword">Password:</label>
+          <input type="password" class="form-control" id="signUpPassword" name="signUpPassword" placeholder="Password">
+          <label for="signUpPassword">Confirm Password:</label>
+          <input type="password" class="form-control" id="signUpPasswordConfirm" name="signUpPasswordConfirm" placeholder="Confirm Password">
           <div class="modal-footer">
-            <button type="button" id="loginButton" onclick="login()" class="btn btn-primary">Login</button>
-            <button type="button" id="closeLoginButton" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" id="signUpButton" onclick="signUp()" class="btn btn-primary">Sign Up</button>
+            <button type="button" id="closeSignUpButton" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
