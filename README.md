@@ -14,3 +14,12 @@
     <td><img src="demo-pics/login-modal.png" alt="Login modal" width="500"></td>
   </tr>
 </table>
+
+## View Stock Information
+<table>
+  <tr>
+    <td><img src="demo-pics/stock-graph.png" alt="stock graph and info" width="500"></td>
+    <td><img src="demo-pics/favorite-stocks.png" alt="Favorite stocks list" width="500"></td>
+  </tr>
+</table>
+
