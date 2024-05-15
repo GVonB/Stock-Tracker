@@ -1,42 +1,198 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stock Tracker PRO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="styles.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="main-bar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./vonbergb.html">Gunnar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./easterj3.html">Jeremy</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./stocks.html">Stocks</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./history.html">History</a>
-            </li>
-          </ul>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="script.js"></script>
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" id="main-bar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./vonbergb.html">Gunnar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./easterj3.html">Jeremy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./stocks.html">Stocks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="historyNavButton" href="./history.html">History</a>
+          </li>
+
+        </ul>
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <button type="button" class="btn" onclick="logout()" id ='logoutButton'>
+              Logout
+            </button>
+            <button type="button" id="loginNavButton" class="btn btn-outline-success" data-bs-toggle="modal"
+              data-bs-target="#loginModal">
+              Login
+            </button>
+            <button type="button" id = "signUpNavButton" class="btn" data-bs-toggle="modal" data-bs-target="#signUpModal">
+              Sign Up
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <header class="bg-primary text-white text-center p-5">
+    <h1>Hello, I'm Gunnar</h1>
+    <p>Second Year Computer Science Student</p>
+  </header>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>About Me</h2>
+        <p>Here's a brief introduction of myself, highlighting my journey and passion in the field of Computer Science.</p>
+        <div class="mb-3">
+          <h4>Bio</h4>
+          <p>I'm a second year Computer Science student at Miami University, with a minor in Japanese. I have a keen interest in software development and machine learning which I hope to utilize to help creatives improve their workflows. I've always enjoyed travelling and taking photographs to capture my experiences. Language learning comes as a natural expansion of these interests.</p>
+        </div>
+        <div class="mb-3">
+          <h4>Education</h4>
+          <p>Currently pursuing a Bachelor's Degree in Computer Science with a minor in Japanese at Miami University, expected graduation in 2026.</p>
+        </div>
+        <div class="mb-3">
+          <h4>Skills</h4>
+          <p>Proficient in Java, and C++, experienced with data structures, algorithms, and web development. Lots of video editing and motion graphic experience working with various clients including the Miami University Esports Club, additionally having a substantial independent following on YouTube.</p>
+        </div>
+        <div class="mb-3">
+          <h4>Interests</h4>
+          <p>Apart from coding, I enjoy hiking, video editing, photography, foreign languages, and exploring new technologies.</p>
         </div>
       </div>
-    </nav>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+      <div class="col-md-4">
+        <img src="photos/gunnar-photos/SuicaPic.png" class="img-fluid" alt="Profile Picture">
+      </div>
+    </div>
+
+    <hr>
+
+    <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex">
+            <img src="photos/gunnar-photos/Nara Wakakusayama.JPG" class="d-block w-33" alt="Wakakusayama in Nara">
+            <img src="photos/gunnar-photos/Yoyogi Park.JPG" class="d-block w-33" alt="Yoyogi Park">
+            <img src="photos/gunnar-photos/Lost in Ikebukuro.JPG" class="d-block w-33" alt="Lost in Ikebukuro">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex">
+            <img src="photos/gunnar-photos/Fushimi Inari Cat.JPG" class="d-block w-33" alt="Cat at Fushimi Inari">
+            <img src="photos/gunnar-photos/Antwerp Train Station From China Town.JPG" class="d-block w-33" alt="Antwerp Train Station from Chinatown">
+            <img src="photos/gunnar-photos/Arc Du Triomphe.JPG" class="d-block w-33" alt="Arc Du Triomphe">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex">
+            <img src="photos/gunnar-photos/Kyoto Kiyomizu-dera.JPG" class="d-block w-33" alt="Kyoto Kiyomizu-dera">
+            <img src="photos/gunnar-photos/Cirque De Lux.JPG" class="d-block w-33" alt="Cirque De Lux">
+            <img src="photos/gunnar-photos/View from Tokyo Skytree.JPG" class="d-block w-33" alt="Tokyo Skytree">
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+    <hr>
+
+    <div class="container my-5">
+      <h2>Contact Information</h2>
+      <p>Feel free to reach out to me through email or my fa-github:</p>
+      <div class="list-group">
+        <a href="mailto:vonbergb@miamioh.edu" class="list-group-item list-group-item-action d-flex align-items-center">
+          <i class="fas fa-envelope me-3"></i> vonbergb@miamioh.edu
+        </a>
+        <a href="https://github.com/GVonB" class="list-group-item list-group-item-action d-flex align-items-center">
+          <i class="fab fa-github me-3"></i> Visit my GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-light text-center text-lg-start mt-auto py-3">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Gunnar Von Bergen
+    </div>
+  </footer>
+
+  <div class="modal" id="loginModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <label for="loginUsername">Username:</label>
+          <input type="text" class="form-control" id  ="loginUsername" name="loginUsername" placeholder="Username">
+          <label for="loginPassword">Password:</label>
+          <input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="Password">
+          
+          <div class="modal-footer">
+            <button type="button" id="loginButton" onclick="login()" class="btn btn-primary">Login</button>
+            <button type="button" id="closeLoginButton" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="signUpModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <label for="signUpName">Name:</label>
+        <input type="text" class="form-control" id="signUpName" name="signUpName" placeholder="Name">
+        <label for="signUpUsername">Username:</label>
+        <input type="text" class="form-control" id="signUpUsername" name="signUpUsername" placeholder="Username">
+        <label for="signUpPassword">Password:</label>
+        <input type="password" class="form-control" id="signUpPassword" name="signUpPassword" placeholder="Password">
+        <label for="signUpPassword">Confirm Password:</label>
+        <input type="password" class="form-control" id="signUpPasswordConfirm" name="signUpPasswordConfirm" placeholder="Confirm Password">
+        <div class="modal-footer">
+          <button type="button" id="signUpButton" onclick="signUp()" class="btn btn-primary">Sign Up</button>
+          <button type="button" id="closeSignUpButton" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

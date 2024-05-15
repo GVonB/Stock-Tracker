@@ -121,4 +121,49 @@ class final_rest
 		}
 		return json_encode ($retData);
 	}
+
+  public static function addFavorite($ticker, $name, $open, $high, $low, $close, $diff, $up, $volume, $user, $date)
+  {
+    $retData["message"] = 'test';
+      // Database connection parameters
+      try {
+        EXEC_SQL("insert into favorite (ticker, nm, o, h, l, cl, diff, up, volume, user) values(?,?,?,?,?,?,?,?,?,?)",$ticker,$name, $open, $high, $low, $close, $diff, $up, $volume, $user);
+        EXEC_SQL('insert into history (dateTime, ticker, name, user, action) values(?,?,?,?,?)',$date, $ticker, $name, $user, 'Added');
+        $retData["status"]=0;
+        $retData['message'] = ('added stock');
+      } catch(Exception $e) {
+        $retData["status"]=1;
+        $retData["message"]=$e->getMessage();
+      }
+      return json_encode ($retData);
+  }
+
+public static function grabFavorites($user) {
+
+  $favs = GET_SQL("select * from favorite  where user = ?", $user);
+  return json_encode($favs);
+}
+
+  public static function removeFavorite($ticker, $user, $date, $name)
+  {
+    $retData["message"] = 'test';
+      // Database connection parameters
+      try {
+        EXEC_SQL('DELETE FROM favorite WHERE ticker == ? AND user == ?', $ticker, $user);
+        EXEC_SQL('insert into history (dateTime, ticker, name, user, action) values(?,?,?,?,?)',$date, $ticker, $name, $user, 'Removed');
+        $retData["status"]=0;
+        $retData['message'] = ('Removed stock');
+      } catch(Exception $e) {
+        $retData["status"]=1;
+        $retData["message"]=$e->getMessage();
+      }
+      return json_encode ($retData);
+  }
+  
+  public static function grabHistory($user) {
+    $hist = GET_SQL("SELECT * FROM history WHERE user = ? ORDER BY dateTime", $user);
+    return json_encode($hist);
+  }
+
+
 }
