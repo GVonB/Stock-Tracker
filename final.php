@@ -1,4 +1,5 @@
-<?php 
+<?php
+error_reporting(0);
 /*
    scott campbell
    Kurt Johnson
