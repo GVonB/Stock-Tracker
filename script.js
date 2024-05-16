@@ -1,8 +1,9 @@
 // various methods assisted with chat GPT
 var user;
 var session;
-var key1 = "placeholder for an API key"
-var key2 = "placeholder for an API key"
+// Replace 'YOUR_API_KEY_HERE' with your actual API key to enable all features.
+const key1 = "YOUR_API_KEY_HERE";
+const key2 = "YOUR_API_KEY_HERE";
 var URL = 'https://api.polygon.io/v3/reference/'
 var stockList = [];
 var indexOfStock;
@@ -135,7 +136,7 @@ function populateDropdown(selectedValue) {
     data: {
       exchange: selectedValue,
       market: 'stocks',
-      apiKey: 'snPd7e0S2_ZiOD5ozmZwphRL1hRg_1_W',
+      apiKey: key1,
       active: true
     }
   }).done(function (data) {
