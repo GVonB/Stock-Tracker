@@ -1,5 +1,25 @@
 # Web Application Development Final Project - Stock Tracker
 
+## Using Docker to Run Stock-Tracker
+
+This project includes a Docker container setup to simplify the environment setup. To run Stock-Tracker using Docker:
+
+1. Ensure Docker is installed on your machine. If not, download and install Docker from [Docker's website](https://www.docker.com/get-started).
+2. Clone the repository to your local machine.
+3. Navigate to the cloned directory.
+4. Replace the API keys in script.js with your own from <a href="polygon.io">polygon.io</a>
+```javascript
+// Replace 'YOUR_API_KEY_HERE' with your actual API key to enable all features.
+const key1 = "YOUR_API_KEY_HERE";
+const key2 = "YOUR_API_KEY_HERE";
+```
+5. Run the following command to start the Docker container:
+   
+ ```sh
+ docker compose up
+ ```
+6.	Visit http://localhost in your web browser to access the application.
+
 ## Features
 - Ability to sign up, log in, and log out.
 - View stock information with dynamic visual indicators including a graph of recent closing prices.
